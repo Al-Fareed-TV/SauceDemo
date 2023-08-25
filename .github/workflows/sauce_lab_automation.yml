@@ -1,5 +1,5 @@
 
-name: Sauce lab automation
+name: SauceDemo
 on: [push]
 jobs:
   build:
