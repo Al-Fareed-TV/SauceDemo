@@ -11,10 +11,8 @@ import java.time.Duration;
 
 public class PageWaits {
     private FluentWait wait ;
-    private WebDriver driver;
 
-    public PageWaits( WebDriver driver) {
-        this.driver = driver;
+    public PageWaits( WebDriver driver)  {
         wait = intiWait(driver);
     }
 
