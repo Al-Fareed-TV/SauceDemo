@@ -10,7 +10,7 @@ import org.openqa.selenium.WebElement;
 import static java.lang.Thread.sleep;
 
 public class Login {
-    public static void main(String[] args) throws InterruptedException {
+    public void LoginUser() throws InterruptedException {
         String browser = "firefox";
         String url = "https://www.saucedemo.com/";
         WebDriver driver = new DriverCreator().createWebDriver(browser);
