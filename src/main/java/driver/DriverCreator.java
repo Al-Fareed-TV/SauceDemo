@@ -13,12 +13,17 @@ import java.sql.DriverManager;
 
 public class DriverCreator {
     public WebDriver createWebDriver(String browser) {
-        return switch (browser) {
-            case "firefox" -> new FirefoxDriver();
-            case "safari" -> new SafariDriver();
-            case "chrome" -> new ChromeDriver();
-            default -> setDefaultDriver();
-        };
+        WebDriver driver;
+        switch (browser){
+            case "firefox" : driver = new FirefoxDriver();
+            break;
+            case "safari" : driver = new SafariDriver();
+            break;
+            case "chrome" : driver = new ChromeDriver();
+            break;
+            default: driver = setDefaultDriver();
+        }
+        return driver;
     }
 
     private WebDriver setDefaultDriver() {
