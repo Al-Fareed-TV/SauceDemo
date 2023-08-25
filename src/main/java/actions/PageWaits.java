@@ -10,21 +10,20 @@ import org.openqa.selenium.support.ui.FluentWait;
 import java.time.Duration;
 
 public class PageWaits {
-    private FluentWait wait ;
+    private final FluentWait<WebDriver> wait;
 
-    public PageWaits( WebDriver driver)  {
+    public PageWaits(WebDriver driver) {
         wait = intiWait(driver);
     }
 
-    public WebElement waitUntilElementVisible(By by){
-        return (WebElement) wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+    public WebElement waitUntilElementVisible(By by) {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(by));
     }
 
-    private FluentWait intiWait(WebDriver driver){
+    private FluentWait<WebDriver> intiWait(WebDriver driver) {
         return new FluentWait<>(driver)
                 .withTimeout(Duration.ofSeconds(20))
                 .pollingEvery(Duration.ofSeconds(2))
                 .ignoring(NoSuchElementException.class);
     }
-
 }
